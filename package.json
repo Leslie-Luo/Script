@@ -1,0 +1,42 @@
+{
+  "name": "script",
+  "description": "My personal script repository",
+  "scripts": {
+		"commit": "git-cz",
+    "prepare": "husky install",
+    "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "czConfig": ".commitlintrc.js"
+    }
+  },
+  "keywords": [
+		"Leslie",
+    "script"
+  ],
+  "author": "Leslie",
+  "volta": {
+    "node": "20.9.0",
+    "pnpm": "8.10.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "npm run lint:script",
+      "git add ."
+    ]
+  }
+}
